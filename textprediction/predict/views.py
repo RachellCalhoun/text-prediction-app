@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.template import loader
 from .clean_text import clean_text_input
 from .forms import TextInputForm
-import gensim
+# import gensim
 import joblib
 
 def index(request):
