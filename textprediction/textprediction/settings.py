@@ -24,9 +24,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-gp7fxyt6i=#^o5ym=#n4-o#um5jl3qjd(ib(#h&5xhdfniu3-)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = []
+DEBUG = os.getenv("DEBUG")
+if not DEBUG:
+    DEBUG = True
+SECRET_KEY = os.getenv("SECRET_KEY")
+
+ALLOWED_HOSTS = ['raca.pythonanywhere.com']
 
 
 # Application definition
@@ -127,3 +131,5 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
