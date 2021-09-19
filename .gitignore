@@ -1,0 +1,21 @@
+CleanedData.csv
+.vscode/settings.json
+.ipynb_checkpoints/*
+# name of virtualenv
+textvenv
+.python-version
+.vscode/settings.json
+.ipynb_checkpoints/*
+supervised_cleaned.db
+Supervised_CleanData.csv
+**/.DS_Store
+**/__pycache__
+db.sqlite3
+
+.vscode/
+
+
+predict/db.sqlite3
+forest_model2.sav
+textprediction/forest_model.sav
+textprediction/textprediction/forest_model.sav
