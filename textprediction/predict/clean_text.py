@@ -1,7 +1,7 @@
 #import needed packages
 
-import numpy as np
-import nltk
+# import numpy as np
+# import nltk
 
 import textstat
 from collections import Counter
@@ -26,9 +26,9 @@ def clean_text_input(text):
     letter_count = textstat.letter_count(text,  ignore_spaces=True)
 
   #tag each for in a sentence with part of speech, then swap all proper nouns with the word "noun".
-    tagged_sentence = nltk.tag.pos_tag(text.split())
-    text_nouns_removed = [word if tag != 'NNP' else 'noun' for word,tag in tagged_sentence]
-    text_nouns_removed = ' '.join(text_nouns_removed)
+    # tagged_sentence = nltk.tag.pos_tag(text.split())
+    # text_nouns_removed = [word if tag != 'NNP' else 'noun' for word,tag in tagged_sentence]
+    text_nouns_removed = text
 
   #calculate text stat variables
     flesch_reading_ease = textstat.flesch_reading_ease(text_nouns_removed)
@@ -67,4 +67,4 @@ def clean_text_input(text):
         letter_count,
         perct_basic_english
     ]
-    return np.array([values])
+    return [values]
