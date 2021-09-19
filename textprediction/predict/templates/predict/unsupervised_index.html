@@ -1,0 +1,19 @@
+
+{% extends 'predict/indexbase.html' %}
+{% block top_section %}
+<span class="glyphicon glyphicon-apple" style="font-size: 60px"></span>
+  <h2 class="section-heading">Text Difficulty Prediction</h2>
+  <p class="text-light">Please enter in a sentences and click submit, we will return the results of whether or not this text should be simplified</p>
+  {% endblock top_section %}
+{% block content %}
+
+<h1>Visualizations for Unsupervised Learning</h1>
+<ul>
+    <li><a href='{% url "base_tsne" %}'>Base TSNE</a> </li>
+    <li><a href='{% url "base_mmds" %}'>Base MMDS</a> </li>
+    <li><a href='{% url "base_pcoa" %}'>Base PCOA</a> </li>
+    <li><a href='{% url "bigram_tsne" %}'>Bigram TSNE</a> </li>
+    <li><a href='{% url "bigram_mmds" %}'>Bigram MMDS</a> </li>
+    <li><a href='{% url "bigram_pcoa" %}'>Bigram PCOA</a> </li>
+</ul>
+ {% endblock %}
