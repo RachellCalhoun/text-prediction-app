@@ -14,7 +14,7 @@ Although you can use them, for a more unique website, replace these images with 
     <title>Milestone2 MADS</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS: You can use this stylesheet to override any Bootstrap styles and/or apply your own styles -->
 
@@ -92,9 +92,9 @@ header .header-content .header-content-inner p {
 }
 
 @media(min-width:768px) {
-    header {
+    /* header {
         min-height: 100%;
-    }
+    } */
 
     header .header-content {
         position: absolute;
@@ -136,7 +136,7 @@ header .header-content .header-content-inner p {
 }
 
 .content {
-    padding: 100px 0;
+    padding: 30px 0;
 }
 
 .content-2 {
@@ -466,46 +466,19 @@ img::-moz-selection {
 
 </style>
     <!-- Navigation -->
-    <nav id="siteNav" class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Logo and responsive toggle -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand " style="color:navy" href="#">
-                	<span class="glyphicon glyphicon-fire"></span>
-                	LOGO
-                </a>
-            </div>
-            <!-- Navbar links -->
-            <div class="collapse navbar-collapse" id="navbar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active">
-                        <a href="/">Home</a>
-                    </li>
-                    <li>
-                        <a href="#">Products</a>
-                    </li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
-						<ul class="dropdown-menu" aria-labelledby="about-us">
-							<li><a href="#">Engage</a></li>
-							<li><a href="#">Pontificate</a></li>
-							<li><a href="#">Synergize</a></li>
-						</ul>
-					</li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
+    <header class="d-flex flex-wrap justify-content-center py-3 border-bottom">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+          <!-- <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg> -->
+          <span class="fs-4">Milestone2 MADS</span>
+        </a>
 
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container -->
-    </nav>
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Home</a></li>
+          <li class="nav-item"><a href="{% url 'supervised' %}" class="nav-link">Supervised</a></li>
+          <li class="nav-item"><a href="{% url 'unsupervised' %}" class="nav-link">Unsupervised</a></li>
+          <li class="nav-item"><a href="{% url 'resources' %}" class="nav-link">Resources</a></li>
+        </ul>
+      </header>
 
 	<!-- Header -->
     <!-- <header>
@@ -546,8 +519,8 @@ img::-moz-selection {
                     <img class="img-responsive img-circle center-block" src="images/microphone.jpg" alt="">
                 </div>
                 <div class="col-sm-6">
-                	<h2 class="section-header">Best in Class</h2>
-                	<p class="lead text-muted">Holisticly predominate extensible testing procedures for reliable supply chains. Dynamically innovate resource-leveling customer service for state of the art customer service.</p>
+                	<h2 class="section-header">Supervised and Unsupervised Learning </h2>
+                	<p class="lead text-muted">The wikipedia dataset provided was used to train a RandomForest Model. We the performed topic modeling on the dataset to extract topic clusters</p>
                 	<a href="#" class="btn btn-primary btn-lg">Classify It</a>
                 </div>
 
@@ -628,7 +601,7 @@ img::-moz-selection {
         <!-- Copyright etc -->
         <div class="small-print">
         	<div class="container">
-        		<p>Copyright &copy; Example.com 2015</p>
+        		<p>Lauren Wolf & Rachell Calhoun 2021</p>
         	</div>
         </div>
 
@@ -638,7 +611,9 @@ img::-moz-selection {
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script> -->
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>

@@ -8,7 +8,7 @@ import joblib
 import os
 
 def index(request):
-    template = loader.get_template('predict/index.html')
+    template = loader.get_template('predict/supervised.html')
     form = TextInputForm()
     return HttpResponse(template.render({'form': form}, request))
 

@@ -1,0 +1,28 @@
+
+{% extends 'predict/indexbase.html' %}
+{% block top_section %}
+<span class="glyphicon glyphicon-apple" style="font-size: 60px"></span>
+  <h2 class="section-heading">Text Difficulty Prediction</h2>
+  <p class="text-light">Please enter in a sentences and click submit, we will return the results of whether or not this text should be simplified</p>
+  {% endblock top_section %}
+{% block content %}
+<h3 class="pb-3">Explore the Cleaned Data Set and Features</h3>
+<p>We used wikipedia training dataset, processed the data and created new features to use for training a model. If you would like to explore the features and create some Visualizations
+  you can visit our <a href="https://supervised-text-readability.herokuapp.com/supervised_cleaned/supervised_readability">heroku app </a>
+</p>
+<p>We used <a href="https://datasette.io/">Datasette</a> to allow for exploration and sharing our data with others.</p>
+<hr>
+
+<h3 class="pb-3">Text Difficulty Prediction: Try for yourself</h3>
+<p>In our original project we were able to train a RandomForest model with the features in the dataset above with n=1000. The size of this model and resoruces available prevented
+  us from using this model on this webapp. So in the form below, we are using n=10 of a RandomForest model with similar other parameters. This will reduce accuracy but for
+the purpose of showing its purpose and function, n=10 will have to suffice.  </p>
+    <form class="pb-3" action="{% url 'result' %}" method="POST">
+      {% csrf_token %}
+
+      {{form.as_p}}
+      <input type="submit" value='Get Predictions'>
+    </form>
+
+<h3>Visualizations</h3>
+ {% endblock %}
