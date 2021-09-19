@@ -1,4 +1,4 @@
-nltk==3.6.2
+# nltk==3.6.2
 # pandas==1.1.5
 # sklearn==0.0
 textstat==0.7.2
@@ -9,3 +9,5 @@ textstat==0.7.2
 # sqlite-utils==3.17
 django==3.2.7
 # gensim==4.1.2
+dotenv
+joblib
