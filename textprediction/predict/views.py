@@ -5,6 +5,7 @@ from .clean_text import clean_text_input
 from .forms import TextInputForm
 # import gensim
 import joblib
+import os
 
 def index(request):
     template = loader.get_template('predict/index.html')
@@ -18,7 +19,10 @@ def getPredictions(text):
     # small compressed model with n=10 not as accurate but useable
     # score on train: 0.9826730139230139
     # score on test: 0.7156211609336609
-    model = joblib.load(open("forest_model_small1.sav", "rb"))
+
+    THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
+    my_file = os.path.join(THIS_FOLDER, 'forest_model_small1.sav')
+    model = joblib.load(open(my_file, "rb"))
     prediction = model.predict(text)
     print(prediction)
     if prediction == 0:
