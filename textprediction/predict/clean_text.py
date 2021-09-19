@@ -1,26 +1,8 @@
 #import needed packages
-import pandas as pd
+
 import numpy as np
 import nltk
 
-from nltk.tokenize import word_tokenize
-
-import sklearn
-from sklearn.model_selection import train_test_split
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.naive_bayes import GaussianNB
-from nltk.corpus import stopwords
-from sklearn.preprocessing import MinMaxScaler
-import matplotlib.pyplot as plt
-#import textstat
-#from textstat.textstat import textstatistics,legacy_round
-from tqdm import tqdm
-tqdm.pandas()
-from sklearn.ensemble import RandomForestClassifier
-from dateutil.parser import parse
-import math
-from sklearn.ensemble import GradientBoostingClassifier
-from sklearn.model_selection import RandomizedSearchCV
 import textstat
 from collections import Counter
 
