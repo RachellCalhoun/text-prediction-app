@@ -6,7 +6,17 @@
   <p class="text-light">Please enter in a sentences and click submit, we will return the results of whether or not this text should be simplified</p>
   {% endblock top_section %}
 {% block content %}
-<h3 class="pb-3">Explore the Cleaned Data Set and Features</h3>
+<div class="row">
+  <div class="col-6">
+  <h3 class="pb-3">Explore the Cleaned Data Set and Features
+  </h3>
+  </div>
+  <div class="col-6">
+
+  <a href="https://supervised-text-readability.herokuapp.com/supervised_cleaned/supervised_readability" target="_blank" rel="noopener" class="float-right btn btn-primary">Explore the Dataset</a>
+  </div>
+</div>
+
 <p>We used wikipedia training dataset, processed the data and created new features to use for training a model. If you would like to explore the features and create some Visualizations
   you can visit our <a href="https://supervised-text-readability.herokuapp.com/supervised_cleaned/supervised_readability">heroku app </a>
 </p>
@@ -22,8 +32,8 @@ the purpose of showing its purpose and function, n=10 will have to suffice. </p>
       {% csrf_token %}
 
       {{form.as_p}}
-      <input type="submit" value='Get Predictions'>
+      <input type="submit" class="btn btn-primary" value='Get Predictions'>
     </form>
-
-<h3>Visualizations</h3>
+<!--
+<h3>Visualizations</h3> -->
  {% endblock %}

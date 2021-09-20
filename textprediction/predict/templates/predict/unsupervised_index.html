@@ -6,14 +6,33 @@
   <p class="text-light">LDA and GSDMM: Short Text Clustering Below are a list of visualizations from a wikipedia training data set</p>
   {% endblock top_section %}
 {% block content %}
+{% include 'predict/_gallery.html' %}
 
-<h1>Visualizations for Unsupervised Learning</h1>
-<ul>
-    <li><a href='{% url "base_tsne" %}'>Base TSNE</a> </li>
-    <li><a href='{% url "base_mmds" %}'>Base MMDS</a> </li>
-    <li><a href='{% url "base_pcoa" %}'>Base PCOA</a> </li>
-    <li><a href='{% url "bigram_tsne" %}'>Bigram TSNE</a> </li>
-    <li><a href='{% url "bigram_mmds" %}'>Bigram MMDS</a> </li>
-    <li><a href='{% url "bigram_pcoa" %}'>Bigram PCOA</a> </li>
-</ul>
- {% endblock %}
+<div id="accordion">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          See list of Visualizations
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+        <ul>
+          <li><a href='{% url "base_tsne" %}'>Base TSNE</a> </li>
+          <li><a href='{% url "base_mmds" %}'>Base MMDS</a> </li>
+          <li><a href='{% url "base_pcoa" %}'>Base PCOA</a> </li>
+          <li><a href='{% url "bigram_tsne" %}'>Bigram TSNE</a> </li>
+          <li><a href='{% url "bigram_mmds" %}'>Bigram MMDS</a> </li>
+          <li><a href='{% url "bigram_pcoa" %}'>Bigram PCOA</a> </li>
+          <li><a href='{% url "topics" %}'>Topics</a> </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+ {% endblock content %}
