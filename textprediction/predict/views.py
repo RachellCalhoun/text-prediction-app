@@ -21,7 +21,8 @@ def getPredictions(text):
     # score on test: 0.7156211609336609
 
     THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
-    my_file = os.path.join(THIS_FOLDER, 'forest_model_small1.sav')
+    # my_file = os.path.join(THIS_FOLDER, 'forest_model_small1.sav')
+    my_file = os.path.join(THIS_FOLDER, 'forestmodel1.pk')
     model = joblib.load(open(my_file, "rb"))
     prediction = model.predict(text)
     print(prediction)

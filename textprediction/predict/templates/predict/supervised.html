@@ -24,10 +24,10 @@
 <hr>
 
 <h3 class="pb-3">Text Difficulty Prediction: Try for yourself</h3>
-<p>In our original project we were able to train a RandomForest model with the features in the dataset above with n=1000. The size of this model and resoruces available prevented
+<p>In our original project we were able to train a RandomForest model with the features in the dataset above with n=1000. The size of this model and resources available prevented
   us from using this model on this webapp. So in the form below, we are using n=10 of a RandomForest model with similar other parameters. This will reduce accuracy but for
 the purpose of showing its purpose and function, n=10 will have to suffice. </p>
-<p class="text-muted">RandomForest with n=10  had a score of 0.97 on training data and 0.70 on test</p>
+<p class="text-muted">RandomForest with n=10  had a score of 0.97 on training data and 0.73 on test</p>
     <form class="pb-3" action="{% url 'result' %}" method="POST">
       {% csrf_token %}
 
