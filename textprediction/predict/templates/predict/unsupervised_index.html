@@ -6,7 +6,17 @@
   <p class="text-light">LDA and GSDMM: Short Text Clustering Below are a list of visualizations from a wikipedia training data set</p>
   {% endblock top_section %}
 {% block content %}
+<div class="row">
+  <div class="col-6">
+  <h3 class="pb-3">Explore the assigned Topic Clusters Data for the original text
+  </h3>
+  </div>
+  <div class="col-6">
 
+  <a href="https://supervised-text-readability.herokuapp.com/supervised_cleaned/unsupervised_topics_only" target="_blank" rel="noopener" class="float-right btn btn-primary">Explore the Dataset</a>
+  </div>
+</div>
+<hr>
 <h3>Predict Topic Text</h3>
 <form class="pb-3" action="{% url 'topic_prediction' %}" method="POST">
   {% csrf_token %}
