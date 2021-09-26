@@ -6,6 +6,7 @@
   <p class="text-light">Please enter in a sentences and click submit, we will return the results of whether or not this text should be simplified</p>
   {% endblock top_section %}
 {% block content %}
+<div class="py-3">
 <div class="row">
   <div class="col-6">
   <h3 class="pb-3">Explore the Cleaned Data Set and Features
@@ -21,8 +22,9 @@
   you can visit our <a href="https://supervised-text-readability.herokuapp.com/supervised_cleaned/supervised_readability">heroku app </a>
 </p>
 <p>We used <a href="https://datasette.io/">Datasette</a> to allow for exploration and sharing our data with others.</p>
+</div>
 <hr>
-
+<div class="py-3">
 <h3 class="pb-3">Text Difficulty Prediction: Try for yourself</h3>
 <p>In our original project we were able to train a RandomForest model with the features in the dataset above with n=1000. The size of this model and resources available prevented
   us from using this model on this webapp. So in the form below, we are using n=10 of a RandomForest model with similar other parameters. This will reduce accuracy but for
@@ -34,6 +36,6 @@ the purpose of showing its purpose and function, n=10 will have to suffice. </p>
       {{form.as_p}}
       <input type="submit" class="btn btn-primary" value='Get Predictions'>
     </form>
-<!--
-<h3>Visualizations</h3> -->
+  </div>
+
  {% endblock %}
