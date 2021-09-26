@@ -6,7 +6,6 @@ from .forms import TextInputForm
 # import gensim
 import joblib
 import os
-from gensim.parsing import preprocess_string
 import pickle
 from lime.lime_text import LimeTextExplainer
 
