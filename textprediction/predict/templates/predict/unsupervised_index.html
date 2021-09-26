@@ -6,6 +6,15 @@
   <p class="text-light">LDA and GSDMM: Short Text Clustering Below are a list of visualizations from a wikipedia training data set</p>
   {% endblock top_section %}
 {% block content %}
+
+<h3>Predict Topic Text</h3>
+<form class="pb-3" action="{% url 'topic_prediction' %}" method="POST">
+  {% csrf_token %}
+
+  {{form.as_p}}
+  <input type="submit" class="btn btn-primary" value='Get Predictions'>
+</form>
+
 {% include 'predict/_gallery.html' %}
 
 <div id="accordion">
