@@ -6,25 +6,37 @@
   <p class="text-light">LDA and GSDMM: Short Text Clustering Below are a list of visualizations from a wikipedia training data set</p>
   {% endblock top_section %}
 {% block content %}
+<div class="py-3">
 <div class="row">
   <div class="col-6">
-  <h3 class="pb-3">Explore the assigned Topic Clusters Data for the original text
+  <h3 class="pb-3">Explore the Assigned Topics and Original Text
   </h3>
   </div>
   <div class="col-6">
 
   <a href="https://supervised-text-readability.herokuapp.com/supervised_cleaned/unsupervised_topics_only" target="_blank" rel="noopener" class="float-right btn btn-primary">Explore the Dataset</a>
   </div>
+  <p>We used wikipedia training dataset, processed the data and asigned topics to the original text. If you would like to explore the features and create some Visualizations
+    you can visit our <a href="https://supervised-text-readability.herokuapp.com/supervised_cleaned/unsupervised_topics_only">heroku app </a>
+  </p>
+  <p>We used <a href="https://datasette.io/">Datasette</a> to allow for exploration and sharing our data with others.</p>
+
+</div>
 </div>
 <hr>
-<h3>Predict Topic Text</h3>
+<div class="py-3">
+<h3 class="pb-3" >Predict Topic Text</h3>
+<p>We ran the Gibbs Sampling Dirichlet Mixture Model (GSDMM) model, a type of LDA specifically designed for shorter texts,
+  on the original texts contained in a Wikipedia training dataset to obtain 20 topic clusters and assigned them to the original texts.
+  We used a TfidfVectorizer, and a naive bayes MultinomialNB classifier to create a pipeline to predict probablity of topics on new
+  text. Try it out for yourself below!</p>
 <form class="pb-3" action="{% url 'topic_prediction' %}" method="POST">
   {% csrf_token %}
 
   {{form.as_p}}
   <input type="submit" class="btn btn-primary" value='Get Predictions'>
 </form>
-
+</div>
 {% include 'predict/_gallery.html' %}
 
 <div id="accordion">
