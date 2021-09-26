@@ -8,6 +8,7 @@ textstat==0.7.2
 # datasette-vega==0.6.2
 # sqlite-utils==3.17
 django==3.2.7
-# gensim==4.1.2
+gensim==4.1.2
 dotenv
 joblib
+lime
