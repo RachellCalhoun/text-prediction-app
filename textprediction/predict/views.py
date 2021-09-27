@@ -8,6 +8,7 @@ import joblib
 import os
 import pickle
 from lime.lime_text import LimeTextExplainer
+from gensim.parsing import preprocess_string
 
 TOPIC_NAMES = [
     "States, Cities, & Districts (US)",
@@ -92,6 +93,7 @@ def topic_result(request):
         form = TextInputForm(request.POST)
         if form.is_valid():
             text = form.cleaned_data.get('text')
+            cleaned_text = " ".join(preprocess_string(text))
             THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
             # updated model
             my_file = os.path.join(THIS_FOLDER, 'vec_class_model.pickle')
@@ -111,7 +113,7 @@ def topic_result(request):
 
             # Make a prediction and explain it:
             exp = explainer.explain_instance(
-                text,
+                cleaned_text,
                 classifier_fn=predictor,
                 top_labels=1,
                 num_features=20,

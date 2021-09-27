@@ -9,7 +9,9 @@
     the original text with the most relevant words highlighted the same color as the predicted topics. </p>
   {% endblock top_section %}
 {% block content %}
+
         <h3 align="center">LIME-explained results</h3>
+        <p><strong>User input:</strong> {{ text }}</p>
         <div class="container">
             {{ exp|safe }}
         </div>
